@@ -22,3 +22,10 @@ jobs:
             -H "Cookie: ${{ secrets.UI_COOKIE }}" \
             -H "new-api-user: ${{ secrets.UI_USER }}" \
             -w "\n响应状态码: %{http_code}\n"
+
+      - name: globalai
+        run: |
+          curl -sSL -X POST 'https://globalai.vip/api/user/checkin' \
+            -H "Cookie: ${{ secrets.GLOBALAI_COOKIE }}" \
+            -H "new-api-user: ${{ secrets.GLOBALAI_USER }}" \
+            -w "\n响应状态码: %{http_code}\n"
