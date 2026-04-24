@@ -2,6 +2,7 @@ name: tesst
 on: 
   schedule:
     - cron: '0 */6 * * *'
+  workflow_dispatch:
 
 jobs:
   first:
@@ -10,4 +11,4 @@ jobs:
     steps:
       - name: first
         run: |
-          curl -v
+          curl -v https://www.google.com
