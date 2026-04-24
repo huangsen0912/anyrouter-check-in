@@ -7,8 +7,12 @@ on:
 jobs:
   first:
     runs-on: ubuntu-latest
+    timeout-minutes: 1
 
     steps:
       - name: first
         run: |
-          curl  -X POST 'https://www.duckcoding.ai/api/user/checkin' -H 'Cookie: ${{secrets.DUCK_COOKIE}};new-api-user: ${{secrets.DUCK_USER}}'
+          curl -sSL -X POST 'https://www.duckcoding.ai/api/user/checkin' \
+            -H "Cookie: ${{ secrets.DUCK_COOKIE }}" \
+            -H "new-api-user: ${{ secrets.DUCK_USER }}" \
+            -w "\n响应状态码: %{http_code}\n"
