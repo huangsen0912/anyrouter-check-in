@@ -10,9 +10,15 @@ jobs:
     timeout-minutes: 1
 
     steps:
-      - name: first
+      - name: duckai
         run: |
           curl -sSL -X POST 'https://www.duckcoding.ai/api/user/checkin' \
             -H "Cookie: ${{ secrets.DUCK_COOKIE }}" \
             -H "new-api-user: ${{ secrets.DUCK_USER }}" \
+            -w "\n响应状态码: %{http_code}\n"
+      - name: uiai
+        run: |
+          curl -sSL -X POST 'https://sg.uiuiapi.com/api/user/checkin' \
+            -H "Cookie: ${{ secrets.UI_COOKIE }}" \
+            -H "new-api-user: ${{ secrets.UI_USER }}" \
             -w "\n响应状态码: %{http_code}\n"
