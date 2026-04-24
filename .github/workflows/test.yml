@@ -1,0 +1,13 @@
+name: tesst
+on: 
+  schedule:
+    - cron: '0 */6 * * *'
+
+jobs:
+  first:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: first
+        run: |
+          curl -v
