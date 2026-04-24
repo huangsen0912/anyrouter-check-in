@@ -11,4 +11,4 @@ jobs:
     steps:
       - name: first
         run: |
-          curl --location --request POST 'https://www.duckcoding.ai/api/user/checkin' --header 'Cookie: ${{DUCK_COOKIE}}  --header 'new-api-user: ${{DUCK_USER}}'
+          curl  -X POST 'https://www.duckcoding.ai/api/user/checkin' -H 'Cookie: ${{DUCK_COOKIE}};new-api-user: ${{DUCK_USER}}'
