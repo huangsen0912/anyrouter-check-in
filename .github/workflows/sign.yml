@@ -1,0 +1,14 @@
+name: sign
+on: 
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  first:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: first
+        run: |
+          curl --location --request POST 'https://www.duckcoding.ai/api/user/checkin' --header 'Cookie: ${{DUCK_COOKIE}}  --header 'new-api-user: ${{DUCK_USER}}'
