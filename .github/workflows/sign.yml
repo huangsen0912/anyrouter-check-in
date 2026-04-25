@@ -31,7 +31,7 @@ jobs:
             -w "\n响应状态码: %{http_code}\n"
       - name: dtonyvip
         run: |
-          curl -sSL -X POST 'https://ai.dtonyvip.dpdns.org/api/user/amount' \
+          curl -sSL -X POST 'https://ai.dtonyvip.dpdns.org/api/user/checkin' \
             -H "Cookie: ${{ secrets.DTONYVIP_COOKIE }}" \
             -H "new-api-user: ${{ secrets.DTONYVIP_USER }}" \
             -d '{"amount":1}' \
