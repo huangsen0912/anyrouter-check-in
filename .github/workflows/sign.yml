@@ -13,26 +13,26 @@ jobs:
       - name: duckai
         run: |
           curl -sSL -X POST 'https://www.duckcoding.ai/api/user/checkin' \
-            -H "Cookie: ${{ secrets.DUCK_COOKIE }}" \
+            -H "Authorization: ${{ secrets.DUCK_COOKIE }}" \
             -H "new-api-user: ${{ secrets.DUCK_USER }}" \
             -w "\n响应状态码: %{http_code}\n"
       - name: uiai
         run: |
           curl -sSL -X POST 'https://sg.uiuiapi.com/api/user/checkin' \
-            -H "Cookie: ${{ secrets.UI_COOKIE }}" \
+            -H "Authorization: ${{ secrets.UI_COOKIE }}" \
             -H "new-api-user: ${{ secrets.UI_USER }}" \
             -w "\n响应状态码: %{http_code}\n"
 
       - name: globalai
         run: |
           curl -sSL -X POST 'https://globalai.vip/api/user/checkin' \
-            -H "Cookie: ${{ secrets.GLOBALAI_COOKIE }}" \
+            -H "Authorization: ${{ secrets.GLOBALAI_COOKIE }}" \
             -H "new-api-user: ${{ secrets.GLOBALAI_USER }}" \
             -w "\n响应状态码: %{http_code}\n"
       - name: dtonyvip
         run: |
           curl -sSL -X POST 'https://ai.dtonyvip.dpdns.org/api/user/checkin' \
-            -H "Cookie: ${{ secrets.DTONYVIP_COOKIE }}" \
+            -H "Authorization: ${{ secrets.DTONYVIP_COOKIE }}" \
             -H "new-api-user: ${{ secrets.DTONYVIP_USER }}" \
             -d '{"amount":1}' \
             -w "\n响应状态码: %{http_code}\n"
